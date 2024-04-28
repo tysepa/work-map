@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
+import './App.css';
+const data=[
+    {
+        
+        image:"https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" 
+    }
+]
 
 
 const MapPage = () => {
@@ -55,7 +61,15 @@ const MapPage = () => {
         <div>
    
       <div id="map">
-       
+       {
+        data.map(({image})=>{
+            return(
+                <>
+                <img src={image} />
+                </>
+            )
+        })
+       }
       </div>
       
       {currentLocation && nextStop && (
